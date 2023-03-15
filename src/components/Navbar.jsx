@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import "../assets/Navbar.css";
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -10,9 +10,9 @@ function Navbar() {
     return (
         <div>
             <nav className="navbar">
-                <div className="navbar-container">
+                <div className="navbar-container container">
                     <Link to="/" className="navbar-logo">
-                        TRVL <i className="fab fa-typo3" />
+                        Demand Beats <i className="fab fa-typo3" />
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
                         {click ? (
@@ -22,7 +22,7 @@ function Navbar() {
                         )}
                     </div>
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
-                        <li className="home">
+                        <li className="nav-item">
                             <NavLink
                                 to="/"
                                 className={({ isActive }) =>
@@ -32,7 +32,7 @@ function Navbar() {
                                 Home
                             </NavLink>
                         </li>
-                        <li className="profile">
+                        <li className="nav-item">
                             <NavLink
                                 to="/"
                                 className={({ isActive }) =>
@@ -42,7 +42,7 @@ function Navbar() {
                                 <i class="fa-solid fa-user"></i>
                             </NavLink>
                         </li>
-                        <li className="favorites">
+                        <li className="nav-item">
                             <NavLink
                                 to="/"
                                 className={({ isActive }) =>
@@ -52,6 +52,11 @@ function Navbar() {
                                 <i class="fa-solid fa-bookmark"></i>
                             </NavLink>
                         </li>
+                        <Link to="/home/login" className="login">
+                            Login
+                        </Link>
+                        ||
+                        <Link className="login">Sign Up</Link>
                     </ul>
                 </div>
             </nav>
