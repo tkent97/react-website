@@ -55,8 +55,10 @@ function Navbar() {
                         <Link to="/home/login" className="login">
                             Login
                         </Link>
-                        ||
-                        <Link className="login">Sign Up</Link>
+                        |
+                        <Link to="/home/signup" className="login">
+                            Sign Up
+                        </Link>
                     </ul>
                 </div>
             </nav>
