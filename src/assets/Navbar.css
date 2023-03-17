@@ -87,10 +87,10 @@
 
 .login {
     border-radius: 50px;
-    color: inherit;
-    font-weight: 600;
+    color: white;
+    font-weight: 500;
     position: relative;
-    border: 1px solid #18394d;
+    border: 2px solid #18394d;
     align-items: flex-start;
     display: flex;
     align-items: center;
