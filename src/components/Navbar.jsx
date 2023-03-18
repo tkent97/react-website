@@ -16,9 +16,9 @@ function Navbar() {
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
                         {click ? (
-                            <i class="fa-solid fa-xmark"></i>
+                            <i className="fa-solid fa-xmark"></i>
                         ) : (
-                            <i class="fa-solid fa-bars"></i>
+                            <i className="fa-solid fa-bars"></i>
                         )}
                     </div>
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -39,7 +39,7 @@ function Navbar() {
                                     "nav-links" + (isActive ? " activated" : "")
                                 }
                             >
-                                <i class="fa-solid fa-user"></i>
+                                <i className="fa-solid fa-user"></i>
                             </NavLink>
                         </li>
                         <li className="nav-item">
@@ -49,7 +49,7 @@ function Navbar() {
                                     "nav-links" + (isActive ? " activated" : "")
                                 }
                             >
-                                <i class="fa-solid fa-bookmark"></i>
+                                <i className="fa-solid fa-bookmark"></i>
                             </NavLink>
                         </li>
                         <Link to="/home/login" className="login">

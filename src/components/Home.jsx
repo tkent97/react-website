@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../assets/Home.css";
 
-const Home = (props) => {
+function Home() {
     return (
         <>
             <main>
@@ -10,14 +10,36 @@ const Home = (props) => {
                     <div className="main-title">
                         <h2>Popular Vinyls</h2>
                     </div>
-                    <div className="albumHolder">
-                        <div class="image" className="musicAlbums">
+                    <div className="album-container">
+                        <div className="music-albums">
                             <img src="" alt="" className="albumItems" />
-                            <div class="hover-items">
+                            <div className="hover-items">
                                 <h3>View Vinyl</h3>
-                                <div class="icons">
+                                <div className="icons">
                                     <NavLink to="/display-vinyl">
-                                        <i class="fa-solid fa-music"></i>
+                                        <i className="fa-solid fa-music"></i>
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="music-albums">
+                            <img src="" alt="" className="albumItems" />
+                            <div className="hover-items">
+                                <h3>View Vinyl</h3>
+                                <div className="icons">
+                                    <NavLink to="/display-vinyl">
+                                        <i className="fa-solid fa-music"></i>
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="music-albums">
+                            <img src="" alt="" className="albumItems" />
+                            <div className="hover-items">
+                                <h3>View Vinyl</h3>
+                                <div className="icons">
+                                    <NavLink to="/display-vinyl">
+                                        <i className="fa-solid fa-music"></i>
                                     </NavLink>
                                 </div>
                             </div>
@@ -28,6 +50,6 @@ const Home = (props) => {
             </main>
         </>
     );
-};
+}
 
 export default Home;
