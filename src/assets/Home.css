@@ -37,8 +37,9 @@ main {
 .album-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-    margin-top: 3rem;
+    grid-gap: 21rem 2rem;
+
+    margin-top: 8rem;
 }
 
 .album-container .music-albums {

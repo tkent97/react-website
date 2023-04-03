@@ -44,6 +44,39 @@ function Home() {
                                 </div>
                             </div>
                         </div>
+                        <div className="music-albums">
+                            <img src="" alt="" className="albumItems" />
+                            <div className="hover-items">
+                                <h3>View Vinyl</h3>
+                                <div className="icons">
+                                    <NavLink to="/display-vinyl">
+                                        <i className="fa-solid fa-music"></i>
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="music-albums">
+                            <img src="" alt="" className="albumItems" />
+                            <div className="hover-items">
+                                <h3>View Vinyl</h3>
+                                <div className="icons">
+                                    <NavLink to="/display-vinyl">
+                                        <i className="fa-solid fa-music"></i>
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="music-albums">
+                            <img src="" alt="" className="albumItems" />
+                            <div className="hover-items">
+                                <h3>View Vinyl</h3>
+                                <div className="icons">
+                                    <NavLink to="/display-vinyl">
+                                        <i className="fa-solid fa-music"></i>
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="rightcontainer"></div>
