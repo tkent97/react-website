@@ -35,16 +35,24 @@ main {
 }
 
 .album-container {
+    /*
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 21rem 2rem;
 
-    margin-top: 8rem;
+    margin-top: 8rem;*/
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
 }
 
 .album-container .music-albums {
     position: relative;
     border-radius: 15px;
+    width: 32%;
+    ;
 }
 
 .album-container .music-albums .hover-items {
@@ -60,4 +68,9 @@ main {
     flex-direction: column;
     /* opacity: 0; */
     /* transform: scale(0); */
+}
+
+.music-albums img {
+    width: 100%;
+    ;
 }
