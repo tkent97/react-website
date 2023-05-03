@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../assets/Home.css";
+import albumFPO from "../assets/placeholder.jpg";
 
 function Home() {
     //variable and function to set variable
 
     const [data, setData] = useState([]);
+    const navigate = useNavigate();
 
     const axiosCall = () => {
         const options = {
@@ -41,29 +43,42 @@ function Home() {
                     </div>
                     <div className="album-container">
                         {data.map((d, i) => {
-                            if (i < 6) {
-                                return (
-                                    <div key={i} className="music-albums">
-                                        <img
-                                            src={d.cover_image}
-                                            alt=""
-                                            className="albumItems"
-                                        />
-                                        <div className="hover-items">
-                                            <h3>View Vinyl {d.title}</h3>
-                                            <div className="icons">
-                                                <NavLink to="/display-vinyl">
-                                                    <i className="fa-solid fa-music"></i>
-                                                </NavLink>
-                                            </div>
+                            // if (i < 6) {
+                            let coverImage;
+                            if (
+                                d.cover_image ==
+                                "https://st.discogs.com/94e4ea25bd35138659d6c659571233819223816b/images/spacer.gif"
+                            ) {
+                                coverImage = albumFPO;
+                            } else {
+                                coverImage = d.cover_image;
+                            }
+
+                            return (
+                                <div
+                                    key={i}
+                                    className="music-albums"
+                                    onClick={() =>
+                                        navigate(`/display-vinyl/${d.id}`)
+                                    }
+                                >
+                                    <img
+                                        src={coverImage}
+                                        alt=""
+                                        className="album-items"
+                                    />
+                                    <div className="hover-items">
+                                        <h3>View Vinyl {d.title}</h3>
+                                        <div className="icons">
+                                            <i className="fa-solid fa-music"></i>
                                         </div>
                                     </div>
-                                );
-                            }
+                                </div>
+                            );
+                            // }
                         })}
                     </div>
                 </div>
-                <div className="rightcontainer"></div>
             </main>
         </>
     );

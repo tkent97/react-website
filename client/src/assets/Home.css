@@ -8,6 +8,7 @@
 main {
     background-image: url("website-background.jpg");
     background-size: cover;
+    background-size: auto;
     background-color: rgba(255, 255, 255, 0.6);
     background-blend-mode: lighten;
     min-height: 100vh;
@@ -18,13 +19,12 @@ main {
 .home-container {
     padding: 3rem 18rem;
     width: 100%;
-    min-height: 100vh;
-    position: absolute;
     left: 0;
 }
 
 .main-title {
     text-align: center;
+    padding: 1rem 0;
 }
 
 .main-title h2 {
@@ -35,24 +35,16 @@ main {
 }
 
 .album-container {
-    /*
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 21rem 2rem;
-
-    margin-top: 8rem;*/
     display: flex;
-    gap: 20px;
+    gap: 26px;
     flex-direction: row;
     flex-wrap: wrap;
-
+    margin-top: 3rem;
 }
 
 .album-container .music-albums {
     position: relative;
-    border-radius: 15px;
     width: 32%;
-    ;
 }
 
 .album-container .music-albums .hover-items {
@@ -61,16 +53,57 @@ main {
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* opacity: 0; */
-    /* transform: scale(0); */
+    border-radius: 15px;
+    background-color: black;
+    opacity: 0;
+    transform: scale(0);
 }
 
-.music-albums img {
+.music-albums .album-items {
     width: 100%;
-    ;
+    height: 350px;
+    /* -o-object-fit: cover;
+    object-fit: cover; */
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.album-container .music-albums .hover-items h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.album-container .music-albums .hover-items .icons {
+    background-color: #19191a;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+
+.album-container .music-albums .hover-items .icons .icon:hover {
+    background-color: white;
+}
+
+.music-albums {
+    cursor: pointer;
+}
+
+.music-albums:hover .hover-items {
+    opacity: 1;
+    transform: scale(1);
 }
