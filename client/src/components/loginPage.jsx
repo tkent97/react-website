@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useNavigate } from "react";
 
-const loginPage = () => {
+const LoginPage = () => {
     return (
         <>
             <div className="login-container">
@@ -14,4 +14,4 @@ const loginPage = () => {
     );
 };
 
-export default loginPage;
+export default LoginPage;

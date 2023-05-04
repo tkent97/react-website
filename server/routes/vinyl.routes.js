@@ -18,7 +18,7 @@ router.get('/vinyls', (req, res) => {
     // console.log("math", currentTime - 1683068758)
 
     // console.log("newtime", newTime, 1683068758)
-
+    // const time = Math.floor(Date.now() / 1000).toString
 
     const options = {
         method: "GET",
