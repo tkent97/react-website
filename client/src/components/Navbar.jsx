@@ -52,13 +52,13 @@ function Navbar() {
                                 <i className="fa-solid fa-bookmark"></i>
                             </NavLink>
                         </li>
-                        <Link to="/home/login" className="login">
+                        <NavLink to="/login" className="login">
                             Login
-                        </Link>
+                        </NavLink>
                         |
-                        <Link to="/home/signup" className="login">
+                        <NavLink to="/home/signup" className="login">
                             Sign Up
-                        </Link>
+                        </NavLink>
                     </ul>
                 </div>
             </nav>
