@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useNavigate } from "react";
-import "..assets/signup.css";
+import "../assets/signup.css";
 const SignUp = () => {
     return (
         <div className="main-signup">
