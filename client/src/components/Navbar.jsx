@@ -56,7 +56,7 @@ function Navbar() {
                             Login
                         </NavLink>
                         |
-                        <NavLink to="/home/signup" className="login">
+                        <NavLink to="/signup" className="login">
                             Sign Up
                         </NavLink>
                     </ul>
