@@ -3,6 +3,7 @@ import Home from './components/Home';
 import LoginPage from './components/LoginPage';
 import { Route, Routes } from "react-router-dom";
 import SignUp from './components/signUp';
+import VinylDisplay from './components/VinylDisplay';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path="/display-vinyl/:id" element={<VinylDisplay />} />
       </Routes>
 
     </div>

@@ -1,8 +1,10 @@
-import React from "react";
-import { useState, useNavigate } from "react";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import axios from "axios";
+import albumFPO from "../assets/placeholder.jpg";
 
-const vinylDisplay = () => {
-    return <></>;
+const VinylDisplay = () => {
+    return <div></div>;
 };
 
-export default vinylDisplay;
+export default VinylDisplay;

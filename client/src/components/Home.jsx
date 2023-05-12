@@ -4,7 +4,7 @@ import axios from "axios";
 import "../assets/Home.css";
 import albumFPO from "../assets/placeholder.jpg";
 
-function Home() {
+const Home = () => {
     //variable and function to set variable
 
     const [data, setData] = useState([]);
@@ -82,6 +82,6 @@ function Home() {
             </main>
         </>
     );
-}
+};
 
 export default Home;

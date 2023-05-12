@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router()
 const axios = require('axios');
+const { default: VinylDisplay } = require("../../client/src/components/VinylDisplay");
 require('dotenv').config();
 
 
@@ -49,9 +50,13 @@ router.get('/vinyls', (req, res) => {
 })
 
 router.get('/vinyls/:id', (req, res) => {
-
-    console.log("i got id", req.params.id);
-
+    axios
+    VinylDisplay.findById(req.params.id)
+        .then(vinyl => res.json({ vinyl }))
+        // console.log("i got id", req.params.id);
+        .catch(function (error) {
+            console.error(error);
+        });
 
     res.json({
         message: "success"
