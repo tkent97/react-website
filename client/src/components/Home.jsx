@@ -32,7 +32,8 @@ const Home = () => {
     useEffect(() => {
         axiosCall();
     }, []);
-
+    //id: 1354 //artist
+    //master_id 1893
     //console.log(axiosCall);
     return (
         <>
@@ -54,12 +55,16 @@ const Home = () => {
                                 coverImage = d.cover_image;
                             }
 
+                            console.log("album data:", d);
+
                             return (
                                 <div
                                     key={i}
                                     className="music-albums"
                                     onClick={() =>
-                                        navigate(`/display-vinyl/${d.id}`)
+                                        navigate(
+                                            `/display-vinyl/${d.master_id}`
+                                        )
                                     }
                                 >
                                     <img

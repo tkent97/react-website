@@ -1,9 +1,9 @@
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import LoginPage from './components/LoginPage';
+import Navbar from './components/navbar';
+import Home from './components/home';
+import LoginPage from './components/loginPage';
 import { Route, Routes } from "react-router-dom";
 import SignUp from './components/signUp';
-import VinylDisplay from './components/VinylDisplay';
+import VinylDisplay from './components/vinylDisplay';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path="/display-vinyl/:id" element={<VinylDisplay />} />
+        <Route path='/display-vinyl/:id' element={<VinylDisplay />} />
       </Routes>
 
     </div>

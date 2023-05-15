@@ -1,7 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router()
 const axios = require('axios');
-const { default: VinylDisplay } = require("../../client/src/components/VinylDisplay");
+
+
 require('dotenv').config();
 
 
@@ -26,7 +27,7 @@ router.get('/vinyls', (req, res) => {
         url: "https://api.discogs.com/database/search?sort=have?%2Cdesc&ev=em_rs&type=release&format_exact=Vinyl&page=1", //api/vinlys
         headers: {
             Authorization:
-                `OAuth oauth_consumer_key="${process.env.OAUTH_CONSUMER_KEY}", oauth_nonce="${process.env.OAUTH_NONCE}", oauth_signature="${process.env.OAUTH_SIGNATURE}", oauth_signature_method="PLAINTEXT", oauth_timestamp="${process.env.OAUTH_TIMESTAMP}", oauth_token="${process.env.OAUTH_TOKEN}", oauth_version="1.0"'`
+                `OAuth oauth_consumer_key="${process.env.OAUTH_CONSUMER_KEY}", oauth_nonce="${process.env.OAUTH_NONCE}", oauth_signature="${process.env.OAUTH_SIGNATURE}", oauth_signature_method="PLAINTEXT", oauth_timestamp="${process.env.OAUTH_TIMESTAMP}", oauth_token="${process.env.OAUTH_TOKEN}", oauth_version="1.0"`
         },
     };
 
@@ -50,20 +51,38 @@ router.get('/vinyls', (req, res) => {
 })
 
 router.get('/vinyls/:id', (req, res) => {
+    console.log("i got id", req.params.id)
+
+
+    const options = {
+        method: "GET",
+        url: `https://api.discogs.com/masters/${req.params.id}`, //api/vinlys
+        headers: {
+            Authorization:
+                `OAuth oauth_consumer_key="${process.env.OAUTH_CONSUMER_KEY}", oauth_nonce="${process.env.OAUTH_NONCE}", oauth_signature="${process.env.OAUTH_SIGNATURE}", oauth_signature_method="PLAINTEXT", oauth_timestamp="${process.env.OAUTH_TIMESTAMP}", oauth_token="${process.env.OAUTH_TOKEN}", oauth_version="1.0"`
+        },
+    };
+
+
     axios
-    VinylDisplay.findById(req.params.id)
-        .then(vinyl => res.json({ vinyl }))
-        // console.log("i got id", req.params.id);
+        .request(options)
+        .then(function (response) {
+            //console.log("i got vinlys/id data", response.data);
+            console.log("sending back")
+            res.json(response.data)
+
+
+        })
         .catch(function (error) {
             console.error(error);
         });
 
-    res.json({
-        message: "success"
-    })
-
 
 });
+
+
+
+
 
 
 
