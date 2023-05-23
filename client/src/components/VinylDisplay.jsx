@@ -25,16 +25,24 @@ const VinylDisplay = () => {
     useEffect(() => {
         axiosCall();
     }, []);
-    console.log(axiosCall);
+
     return (
         <div>
             <main>
-                <div className="container">
-                    {data && (
-                        <div>
-                            <h3>View Vinyl {data.title}</h3>
-                        </div>
-                    )}
+                <div className="vinyl-container">
+                    <div className="left-container">
+                        {data && (
+                            <div>
+                                <img
+                                    src={data.images[0].resource_url}
+                                    alt="vinyl img"
+                                    className="cover-img"
+                                />
+                                <h3>{data.title}</h3>
+                            </div>
+                        )}
+                    </div>
+                    <div className="right-container"></div>
                 </div>
             </main>
         </div>
