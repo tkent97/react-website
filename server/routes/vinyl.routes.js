@@ -7,7 +7,7 @@ require('dotenv').config();
 
 
 
-router.get('/vinyls', (req, res) => {
+router.get('/vinyls/popular', (req, res) => {
 
 
     // const currentTime = Date.now();
@@ -24,12 +24,14 @@ router.get('/vinyls', (req, res) => {
 
     const options = {
         method: "GET",
-        url: "https://api.discogs.com/database/search?sort=have?%2Cdesc&ev=em_rs&type=release&format_exact=Vinyl&page=1", //api/vinlys
+        url: "https://api.discogs.com/database/search?sort=have&type=release&format_exact=Vinyl&page=1", //api/vinlys
         headers: {
             Authorization:
                 `OAuth oauth_consumer_key="${process.env.OAUTH_CONSUMER_KEY}", oauth_nonce="${process.env.OAUTH_NONCE}", oauth_signature="${process.env.OAUTH_SIGNATURE}", oauth_signature_method="PLAINTEXT", oauth_timestamp="${process.env.OAUTH_TIMESTAMP}", oauth_token="${process.env.OAUTH_TOKEN}", oauth_version="1.0"`
         },
     };
+
+
 
 
 
@@ -49,6 +51,7 @@ router.get('/vinyls', (req, res) => {
 
 
 })
+
 
 router.get('/vinyls/:id', (req, res) => {
     console.log("i got id", req.params.id)
