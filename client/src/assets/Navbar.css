@@ -42,6 +42,20 @@
     align-items: center;
 }
 
+.search-cont {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-search {
+    background-color: white;
+}
+
+.fa-magnifying-glass {
+    color: rgb(230, 230, 230);
+}
+
 .navbar-icon {
     margin-right: 0.5rem;
 }
@@ -126,6 +140,25 @@
     height: 100%;
     background-color: #7c7aec;
     transform: translateX(0);
+}
+
+.searchHelper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: white;
+    top: 60px;
+    right: 0px;
+    left: 20px;
+    height: 200px;
+    overflow: scroll;
+    padding: 5px;
+    gap: 10px;
+}
+
+.searchHelper:empty {
+    display: none;
+
 }
 
 @media screen and (max-width: 960px) {
