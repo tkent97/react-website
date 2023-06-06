@@ -13,7 +13,7 @@ const Home = () => {
     const axiosCall = () => {
         const options = {
             method: "GET",
-            url: "/api/vinyls", //api/vinlys
+            url: "/api/vinyls/popular", //api/vinlys
         };
 
         axios
@@ -55,7 +55,7 @@ const Home = () => {
                                 coverImage = d.cover_image;
                             }
 
-                            console.log("album data:", d);
+                            //console.log("album data:", d);
 
                             return (
                                 <div
