@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.vinyl-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left-container {
+    height: 50vh;
+}
+
+
+.main-info {
+    display: flex;
+    gap: 26px;
+    margin-top: 3rem;
+}
+
+.cover-img {
+    display: flex;
+    width: 32%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.right-container {
+    display: flex;
+
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+hr {
+    border-bottom: 1px solid #000000;
+}
+
+.bottom-container {}
