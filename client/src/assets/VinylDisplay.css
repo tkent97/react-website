@@ -44,4 +44,9 @@ hr {
     border-bottom: 1px solid #000000;
 }
 
-.bottom-container {}
+.bottom-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding-left: 180px;
+}

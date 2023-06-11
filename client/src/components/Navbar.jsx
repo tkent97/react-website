@@ -8,7 +8,6 @@ import axios from "axios";
 
 function Navbar({ showHelper, setShowHelper }) {
     const [click, setClick] = useState(false);
-    const [data, setData] = useState("");
     const [searchHelper, setSearchHelper] = useState([]);
 
     const [input, setInput] = useState("");
