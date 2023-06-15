@@ -73,53 +73,105 @@ const VinylDisplay = () => {
             <main>
                 <div className="vinyl-container">
                     <div className="left-container">
-                        {data && data.images && data.artists && (
-                            <div className="main-info">
-                                <img
-                                    src={data.images[0].resource_url}
-                                    alt="vinyl img"
-                                    className="cover-img"
-                                />
-                                <div className="info">
-                                    <h1>
-                                        {data.artists[0].name} - {data.title}
-                                    </h1>
-                                    <>
-                                        <h4>Label: </h4>
-                                        <h4>Format:</h4>
-                                        <h4>Country: </h4>
-                                        <h4>Released: {data.year} </h4>
-                                    </>
+                        {data &&
+                            data.images &&
+                            data.artists &&
+                            data2.versions && (
+                                <div className="main-info">
+                                    <img
+                                        src={data.images[0].resource_url}
+                                        alt="vinyl img"
+                                        className="cover-img"
+                                    />
+                                    <div className="info">
+                                        <h1>
+                                            {data.artists[0].name} -{" "}
+                                            {data.title}
+                                        </h1>
+                                        <>
+                                            <h4>
+                                                Label:{" "}
+                                                {data2.versions.map((v, i) => {
+                                                    if (
+                                                        i ===
+                                                        data2.versions.length -
+                                                            0
+                                                    ) {
+                                                        return <>{v.label}</>;
+                                                    } else if (
+                                                        data.main_release ===
+                                                        v.id
+                                                    ) {
+                                                        return <>{v.label} </>;
+                                                    }
+                                                })}{" "}
+                                            </h4>
+                                            <h4>
+                                                Country:{" "}
+                                                {data2.versions.map((v, i) => {
+                                                    if (
+                                                        i ===
+                                                        data2.versions.length -
+                                                            0
+                                                    ) {
+                                                        return <>{v.country}</>;
+                                                    } else if (
+                                                        data.main_release ===
+                                                        v.id
+                                                    ) {
+                                                        return (
+                                                            <>{v.country} </>
+                                                        );
+                                                    }
+                                                })}
+                                            </h4>
+                                            <h4>Released: {data.year} </h4>
+                                        </>
 
-                                    <h4>
-                                        Genre:{" "}
-                                        {data.genres.map((genre, i) => {
-                                            if (i === data.genres.length - 1) {
-                                                return <>{genre}</>;
-                                            } else {
-                                                return <>{genre}, </>;
-                                            }
-                                        })}
-                                    </h4>
-                                    <h4>
-                                        Style:{" "}
-                                        {data.styles.map((s, i) => {
-                                            if (i === data.styles.length - 1) {
-                                                return <>{s}</>;
-                                            } else {
-                                                return <>{s}, </>;
-                                            }
-                                        })}{" "}
-                                    </h4>
+                                        <h4>
+                                            Genre:{" "}
+                                            {data.genres.map((genre, i) => {
+                                                if (
+                                                    i ===
+                                                    data.genres.length - 1
+                                                ) {
+                                                    return <>{genre}</>;
+                                                } else {
+                                                    return <>{genre}, </>;
+                                                }
+                                            })}
+                                        </h4>
+                                        <h4>
+                                            Style:{" "}
+                                            {data.styles.map((s, i) => {
+                                                if (
+                                                    i ===
+                                                    data.styles.length - 1
+                                                ) {
+                                                    return <>{s}</>;
+                                                } else {
+                                                    return <>{s}, </>;
+                                                }
+                                            })}{" "}
+                                        </h4>
+                                    </div>
+                                </div>
+                            )}
+                    </div>
+                    <div className="right-container">
+                        {data && data.main_release && (
+                            <div className="release-info">
+                                <div className="header-content">
+                                    <h3>Release</h3>
+                                    <h5>R#{data.main_release}</h5>
+                                </div>
+                                <hr></hr>
+                                <div className="release-buttons">
+                                    <h5>main collection</h5>
                                 </div>
                             </div>
                         )}
-                    </div>
-                    <div className="right-container">
-                        <div className="release info">
-                            <h3>Release</h3>
-                            <hr></hr>
-                        </div>
+
                         <div className="market-info">
                             <h3>Market info</h3>
                             <hr></hr>
@@ -139,12 +191,18 @@ const VinylDisplay = () => {
                     {data.tracklist &&
                         data.tracklist.map((list, i) => {
                             if (i === data.tracklist.length) {
-                                return <h5>{list.title}</h5>;
+                                return (
+                                    <h5>
+                                        {list.position} {list.title}
+                                    </h5>
+                                );
                             } else {
                                 return (
                                     <>
                                         <hr></hr>
-                                        <h5>{list.title}</h5>
+                                        <h5>
+                                            {list.position} {list.title}
+                                        </h5>
                                     </>
                                 );
                             }

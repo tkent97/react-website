@@ -12,6 +12,7 @@
 
 .left-container {
     height: 50vh;
+
 }
 
 
@@ -35,14 +36,39 @@
 
 .right-container {
     display: flex;
-
     justify-content: space-evenly;
     flex-direction: column;
+    max-height: max-content;
 }
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.release-info {
+    height: 70px;
+}
+
 
 hr {
     border-bottom: 1px solid #000000;
 }
+
+.release-buttons {
+    width: 70%;
+    height: 50%;
+    color: white;
+    border-radius: 0.25em;
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+}
+
 
 .bottom-container {
     display: flex;
