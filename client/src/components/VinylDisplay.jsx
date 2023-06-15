@@ -69,8 +69,8 @@ const VinylDisplay = () => {
     }, []);
 
     return (
-        <>
-            <main>
+        <main>
+            <div className="main-cont">
                 <div className="vinyl-container">
                     <div className="left-container">
                         {data &&
@@ -167,7 +167,7 @@ const VinylDisplay = () => {
                                 </div>
                                 <hr></hr>
                                 <div className="release-buttons">
-                                    <h5>main collection</h5>
+                                    <h5>Your Collection</h5>
                                 </div>
                             </div>
                         )}
@@ -208,8 +208,8 @@ const VinylDisplay = () => {
                             }
                         })}
                 </div>
-            </main>
-        </>
+            </div>
+        </main>
     );
 };
 
